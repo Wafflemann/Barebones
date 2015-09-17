@@ -1,0 +1,2 @@
+# Barebones
+Barebones automation project
