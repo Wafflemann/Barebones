@@ -28,7 +28,7 @@ public class BaseTest {
                 } else {
 
                     try {
-                        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
+                        driver = new RemoteWebDriver(new URL("http://" + Constants.GRID_IP + ":4444/wd/hub"), DesiredCapabilities.firefox());
                     } catch (MalformedURLException e) {}
                 }
                 break;
@@ -40,7 +40,7 @@ public class BaseTest {
                 } else {
 
                     try {
-                        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.chrome());
+                        driver = new RemoteWebDriver(new URL("http://" + Constants.GRID_IP + ":4444/wd/hub"), DesiredCapabilities.chrome());
                     } catch (MalformedURLException e) {}
 
                 }
@@ -54,7 +54,7 @@ public class BaseTest {
                 } else {
 
                     try {
-                        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.internetExplorer());
+                        driver = new RemoteWebDriver(new URL("http://" + Constants.GRID_IP + ":4444/wd/hub"), DesiredCapabilities.internetExplorer());
                     } catch (MalformedURLException e) {}
 
                 }
@@ -66,7 +66,7 @@ public class BaseTest {
                     driver = new ChromeDriver();
                 } else {
                     try {
-                        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.chrome());
+                        driver = new RemoteWebDriver(new URL("http://" + Constants.GRID_IP + ":4444/wd/hub"), DesiredCapabilities.chrome());
                     } catch (MalformedURLException e) {}
                 }
                 break;

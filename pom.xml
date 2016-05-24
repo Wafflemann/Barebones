@@ -21,6 +21,7 @@
                     <systemPropertyVariables>
                         <onGrid>false</onGrid>
                         <browser>Firefox</browser>
+			<gridIP>localhost</gridIP>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
