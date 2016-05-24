@@ -94,7 +94,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-        setup(Constants.CHROME);
+        setup(Constants.BROWSER);
     }
 
     @AfterMethod
