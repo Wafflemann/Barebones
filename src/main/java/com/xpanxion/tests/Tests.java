@@ -21,7 +21,7 @@ public class Tests extends BaseTest {
         Assert.assertEquals(expectedUrl, actualUrl);
     }
 
-    @Test
+    @Test(enabled=false)
     public void Test2() {
         System.out.println(Constants.ON_GRID.toString());
         HomePage homePage = new HomePage(driver());
