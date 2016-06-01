@@ -18,27 +18,20 @@ public class Test1 extends BaseTest {
 
     @Given("^I navigate to xpanxion home page$")
     public void i_navigate_to_xpanxion_home_page(){
+    	System.out.println(Constants.ON_GRID.toString());
     	homePage = new HomePage(driver());
-    	System.out.println(driver());
-        actualUrl = homePage.navigation().getCurrentUrl();
-        expectedUrl = homePage.getPageName();
-
     }
 
     @When("^the page loads$")
     public void the_page_loads() {
+    	actualUrl = homePage.navigation().getCurrentUrl();
+    	expectedUrl = homePage.getPageName();
         System.out.println("Actual: " + actualUrl);
         System.out.println("Expected: " + expectedUrl);
-        Assert.assertEquals(actualUrl,expectedUrl);
     }
 
     @Then("^validate the url$")
     public void validate_the_url() {
-        System.out.println(Constants.ON_GRID.toString());
-        homePage.navigateTo();
+        Assert.assertEquals(actualUrl,expectedUrl);
     }
-
-
-
-
 }

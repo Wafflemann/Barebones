@@ -7,6 +7,11 @@ import com.xpanxion.tests.BaseTest;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
+/**
+ * Hooks class for cucumber to call these methods before and after tests
+ * @author cdorsey
+ *
+ */
 public class Hooks {
 	@Before
 	public void before() {
