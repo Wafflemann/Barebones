@@ -17,4 +17,9 @@ public class HomePage extends BasePage {
     public void navigateTo() {
         driver.get(Constants.BASE_URL + pageName);
     }
+
+	@Override
+	public void waitForPageLoad() {
+		//pageHelper().wait(seconds, element);
+	}
 }

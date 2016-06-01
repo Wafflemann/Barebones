@@ -13,19 +13,26 @@ public abstract class BasePage {
 
 
     public BasePage(WebDriver driver) {
-        this.driver = driver;
-        navigation = new Navigation(driver);
+    	this.driver = driver;
+        //navigation = new Navigation(driver);
         pageHelper = new PageHelper(driver);
         pageName = "";
+        navigateTo();
+        waitForPageLoad();
     }
 
     public abstract void navigateTo();
 
     public Navigation navigation() {
+    	if(navigation == null) {
+    		navigation = new Navigation(driver);
+    	}
         return navigation;
     }
 
     public PageHelper pageHelper() {
         return pageHelper;
     }
+    
+    public abstract void waitForPageLoad();
 }

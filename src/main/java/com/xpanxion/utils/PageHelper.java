@@ -16,7 +16,8 @@ public class PageHelper {
         wait.until(ExpectedConditions.presenceOfElementLocated(element));
     }
 
-    public void wait(int seconds) {
+/*    public void wait(int seconds) {
         WebDriverWait wait = new WebDriverWait(driver, (seconds * 1000));
-    }
+        
+    }*/
 }

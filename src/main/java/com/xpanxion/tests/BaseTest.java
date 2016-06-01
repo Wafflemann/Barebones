@@ -2,6 +2,10 @@ package com.xpanxion.tests;
 
 import com.xpanxion.utils.Constants;
 import com.xpanxion.utils.LocalDriverManager;
+
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,7 +19,7 @@ import java.net.URL;
 
 
 public class BaseTest {
-    static WebDriver setBrowser(String browser) {
+    public static WebDriver setBrowser(String browser) {
         WebDriver driver = null;
         System.setProperty("webdriver.chrome.driver", Constants.CHROME_PATH);
         System.setProperty("webdriver.ie.driver", Constants.INTERNET_EXPLORER_PATH);
@@ -86,12 +90,12 @@ public class BaseTest {
     }
 
     public WebDriver driver() {
-        System.out.println("Thread id: " + Thread.currentThread().getId());
-        System.out.println("Hashcode of webDriver instance: " + LocalDriverManager.getDriver().hashCode());
+        //System.out.println("Thread id: " + Thread.currentThread().getId());
+        //System.out.println("Hashcode of webDriver instance: " + LocalDriverManager.getDriver().hashCode());
         WebDriver driver = LocalDriverManager.getDriver();
         return driver;
     }
-
+    
     @BeforeMethod
     public void setup() {
         setup(Constants.BROWSER);

@@ -16,13 +16,10 @@ public class Test1 extends BaseTest {
     String actualUrl = "";
     String expectedUrl = "";
 
-    public Test1(){
-        homePage = new HomePage(driver());
-    }
-
     @Given("^I navigate to xpanxion home page$")
     public void i_navigate_to_xpanxion_home_page(){
-
+    	homePage = new HomePage(driver());
+    	System.out.println(driver());
         actualUrl = homePage.navigation().getCurrentUrl();
         expectedUrl = homePage.getPageName();
 
@@ -32,7 +29,7 @@ public class Test1 extends BaseTest {
     public void the_page_loads() {
         System.out.println("Actual: " + actualUrl);
         System.out.println("Expected: " + expectedUrl);
-        Assert.assertEquals(expectedUrl, actualUrl);
+        Assert.assertEquals(actualUrl,expectedUrl);
     }
 
     @Then("^validate the url$")
