@@ -54,7 +54,10 @@ public class BaseTest {
                 } else {
 
                     try {
-                        driver = new RemoteWebDriver(new URL("http://" + Constants.GRID_IP + ":4444/wd/hub"), DesiredCapabilities.internetExplorer());
+                    	
+                    	DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+                    	capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+                        driver = new RemoteWebDriver(new URL("http://" + Constants.GRID_IP + ":4444/wd/hub"), capabilities);
                     } catch (MalformedURLException e) {}
 
                 }
